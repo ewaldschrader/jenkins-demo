@@ -12,11 +12,9 @@ pipeline {
   
   
   stages {
-    
     stage("build") {
       steps {
         echo 'building application..'
-        sh 'mvn install'
       }
     }
     stage("test") {  
@@ -24,6 +22,7 @@ pipeline {
         expression {
           params.executeTests
         }
+      }
       steps {
         echo 'testing application..'
       }
